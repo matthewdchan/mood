@@ -32,7 +32,7 @@ const Form = () => {
     .then((res) => {
         console.log(res);
         console.log(res.data);
-        setArtblocks((prevArtblocks) => [...prevArtblocks, newItem]);
+        setArtblocks((prevArtblocks) => [...prevArtblocks, newJournal]);
         //navigate('/auth-user');
     })
     .catch((err) => {
