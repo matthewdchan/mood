@@ -11,12 +11,9 @@ function App() {
   return (
     <JournalProvider>
       <Router>
-        <div className="App">
           <Routes> 
             <Route path='/add-text' element={<AddJournalView/>} />
         </Routes>
-      <Form/>
-    </div>
     </Router>
     </JournalProvider>
   );

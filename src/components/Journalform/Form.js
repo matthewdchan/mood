@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useJournalContext } from '../../JournalContext';
+import { JournalProvider } from '../../JournalContext';
 
 
 const Form = () => {
