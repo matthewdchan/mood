@@ -1,4 +1,5 @@
  // database variables
+ require('dotenv').config();
  const express = require('express');
  const server = express();
  const mongoose = require('mongoose');
@@ -16,8 +17,10 @@
  const users = require('./routes/users');
  server.use('/users', users);
  */
- 
- const conn_str = `mongodb+srv://admin:ugahacks9@mood.aaa8smq.mongodb.net/?retryWrites=true&w=majority`;
+ const mongousername = process.env.MONGO_USERNAME;
+ const mongopassword = process.env.MONGO_PASS;
+ const mongocluster = process.env.MONGO_CLUSTER;
+ const conn_str = `mongodb+srv://${mongousername}:${mongopassword}@${mongocluster}.mongodb.net/?retryWrites=true&w=majority`;
  mongoose.set('strictQuery', false);
  
  
