@@ -33,7 +33,7 @@ const Form = () => {
     .then((res) => {
         console.log(res);
         console.log(res.data);
-        setjournalblocks((prevjournalblocks) => [...prevjournalblocks, newJournal]);
+        setjournalBlocks((prevjournalblocks) => [...prevjournalblocks, newJournal]);
         //navigate('/auth-user');
     })
     .catch((err) => {

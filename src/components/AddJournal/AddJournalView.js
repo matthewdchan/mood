@@ -9,9 +9,7 @@ const AddJournalView = () => {
 
         <Header> </Header>
 
-        <Maincontent> 
             <Form> </Form>
-        </Maincontent> 
 
         <Footer> </Footer>
 
