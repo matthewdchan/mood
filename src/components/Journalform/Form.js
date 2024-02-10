@@ -49,7 +49,7 @@ const Form = () => {
 
   return (
     <div className="Form">
-      <form id="journalPart"> 
+      <form id="journalPart" onSubmit={submitHandler}> 
         <label for="title"> Title: </label>
         <input type="text"></input>
         <br></br>

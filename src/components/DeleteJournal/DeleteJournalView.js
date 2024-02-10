@@ -3,8 +3,7 @@ import  Header  from "../PageLayout/Header";
 import  Form from "../Journalform/Form";
 import  Footer  from "../PageLayout/Footer";
 
-
-const EditJournalView = () => {
+const DeleteJournalView = () => {
     return (
         <>
 
@@ -18,5 +17,4 @@ const EditJournalView = () => {
     )
 
 };
-
-export default EditJournalView;
+export default DeleteJournalView;
