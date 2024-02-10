@@ -3,19 +3,21 @@
  const server = express();
  const mongoose = require('mongoose');
  const cors = require('cors');
- const arts = require('./routes/arts');
+ const journals = require('./routes/journals');
  const port = process.env.PORT || 4000; // default port
  
  // connecting to the database
  server.use(cors({ origin: true, credentials: true }));
  server.use(express.json( { extended: false }));
- server.use('/arts', arts);
+ server.use('/journals', journals);
  
+ /*
  // Authentication
  const users = require('./routes/users');
  server.use('/users', users);
+ */
  
- const conn_str = `mongodb+srv://peppapigs0:21xXzYZY0PKyWopi@cluster0.deaupvj.mongodb.net/?retryWrites=true&w=majority`;
+ const conn_str = `mongodb+srv://admin:ugahacks9@mood.aaa8smq.mongodb.net/?retryWrites=true&w=majority`;
  mongoose.set('strictQuery', false);
  
  

@@ -1,23 +1,15 @@
 const mongoose = require('mongoose');
 
-const ArtSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true,
-    },
-    img: {
-        type: String,
-        required: false, // should be changed to true if we don't allow image uploads
-    },
-    artist: {
+const JournalSchema = new mongoose.Schema({
+    text: {
         type: String,
         required: true,
     },
     date: {
-        type: String,
+        type: String, //might need to change to date
         required: true,
     },
-    identifier: {
+    title: {
         type: String,
         required: true,
     },
@@ -26,4 +18,4 @@ const ArtSchema = new mongoose.Schema({
     }
 );
 
-module.exports = Art = mongoose.model('art', ArtSchema);
+module.exports = Journal = mongoose.model('journal', JournalSchema);
