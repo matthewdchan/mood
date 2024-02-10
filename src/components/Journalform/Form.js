@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 
-const Form = ({ addedData }) => {
+const Form = () => {
   const [enteredTitle, setTitle] = useState('');
   const [enteredDate, setDate] = useState('');
   const [enteredText, setText] = useState('');
@@ -18,7 +19,7 @@ const Form = ({ addedData }) => {
     setText(event.target.value);
    };
 
-   const submitHandler = (event) => {
+   const submitHandler = async (event) => {
     event.preventDefault(); 
 
     const newJournal = {
@@ -26,6 +27,17 @@ const Form = ({ addedData }) => {
       date: enteredDate,
       text: enteredText
     };
+    await axios
+    .post('http://localhost:4000/journals', newJournal)
+    .then((res) => {
+        console.log(res);
+        console.log(res.data);
+        setArtblocks((prevArtblocks) => [...prevArtblocks, newItem]);
+        //navigate('/auth-user');
+    })
+    .catch((err) => {
+        console.log('Error in creating new item', err);
+    });
 
 
     setDate('');
