@@ -5,6 +5,7 @@ import axios from 'axios';
 
 const JournalContext = createContext(); 
 
+
 export const JournalProvider = ( {children} ) => {
     const [journalBlocks, setjournalBlocks] = useState([]);
 

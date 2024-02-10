@@ -19,5 +19,6 @@ const EditJournalView = () => {
         </>
     )
 
-    export default EditJournalView;
+
 }
+export default EditJournalView;

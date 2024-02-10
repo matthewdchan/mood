@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useJournalContext } from '../../JournalContext';
 
 
 const Form = () => {
@@ -32,7 +33,7 @@ const Form = () => {
     .then((res) => {
         console.log(res);
         console.log(res.data);
-        setArtblocks((prevArtblocks) => [...prevArtblocks, newJournal]);
+        setjournalblocks((prevjournalblocks) => [...prevjournalblocks, newJournal]);
         //navigate('/auth-user');
     })
     .catch((err) => {
