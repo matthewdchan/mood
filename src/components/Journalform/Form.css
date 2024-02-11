@@ -1,5 +1,21 @@
 .Form {
-    max-width: 200px;
+    max-width: 1700px;
     margin: 0 auto;
-    padding: 20px;
+    padding-bottom: 20px;
+    padding: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: large;
+    background-color: #fef7e1;
+}
+
+.Form input[type="submit"] {
+background-color:#C9D7DD ;
+border: none;
+border-radius: 5px;
+padding: 7px;
+margin: 10px;
+}
+
+.Form input[type="submit"]:hover {
+background-color: #637A9F;
 }
