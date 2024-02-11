@@ -1,7 +1,9 @@
 import './App.css';
 import { useJournalContext, JournalProvider } from './JournalContext';
 import AddJournalView from './components/AddJournal/AddJournalView';
+import EditJournalView from './components/EditJournal/EditJournalView';
 import Main from './components/MainView/Main';
+import ErrorPage from './components/ErrorView/ErrorPage';
 
 // dependency imports
 import React from 'react';
@@ -29,9 +31,10 @@ function App() {
       <div className="App">
         <Router>
           <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="/maincontent" element={<Maincontent />} />
-            <Route path="/add" element={<AddJournalView />} />
+            <Route path='/' element={<Main />} />
+            <Route path='/add-item' element={<AddJournalView />} />
+            <Route path='/edit-item' element={<EditJournalView />} />
+            <Route path='*' element={<ErrorPage />} />
           </Routes>
         </Router>
       </div>

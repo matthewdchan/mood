@@ -1,6 +1,6 @@
 import React from "react";
 import  Header  from "../PageLayout/Header";
-import  Form from "../Journalform/Form";
+import  AddForm from "../Journalform/AddForm";
 import  Footer  from "../PageLayout/Footer";
 
 function AddJournalView () {
@@ -9,7 +9,7 @@ function AddJournalView () {
 
         <Header> </Header>
 
-            <Form> </Form>
+            <AddForm> </AddForm>
 
         <Footer> </Footer>
 
