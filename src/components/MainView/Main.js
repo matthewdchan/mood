@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 // local imports
 import  Header  from "../PageLayout/Header";
-import  Form from "../Journalform/Form";
+import  Form from "../Journalform/AddForm";
 import  Footer  from "../PageLayout/Footer";
 import Maincontent from "../PageLayout/Maincontent";
 

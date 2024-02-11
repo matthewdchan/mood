@@ -5,7 +5,7 @@ import { JournalProvider } from '../../JournalContext';
 import moment from 'moment';
 
 
-function Form() {
+function AddForm() {
   const currentDate = moment().format('MM/DD/YYYY');
   const {setjournalblocks} = useJournalContext();
   
@@ -71,4 +71,4 @@ function Form() {
   );
 };
 
-export default Form;
+export default AddForm;

@@ -1,6 +1,6 @@
 import React from "react";
 import  Header  from "../PageLayout/Header";
-import  Form from "../Journalform/Form";
+//import  Form from "../Journalform/AddForm";
 import  Footer  from "../PageLayout/Footer";
 
 function DeleteJournalView () {
@@ -9,7 +9,7 @@ function DeleteJournalView () {
 
         <Header> </Header>
 
-        <Form> </Form>
+        
 
         <Footer> </Footer>
 
