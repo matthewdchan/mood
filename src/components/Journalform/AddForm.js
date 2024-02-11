@@ -39,7 +39,7 @@ function AddForm() {
     .then((res) => {
         console.log(res);
         console.log(res.data);
-        setjournalblocks((prevjournalblocks) => [...prevjournalblocks, newJournal]);
+        setjournalblocks((prevjournalblocks) => [...prevjournalblocks, res.data]); // use res.data to ensure we have a valid id from the server
         //navigate('/auth-user');
     })
     .catch((err) => {
