@@ -3,7 +3,7 @@ import  Header  from "../PageLayout/Header";
 import  Form from "../Journalform/Form";
 import  Footer  from "../PageLayout/Footer";
 
-const AddJournalView = () => {
+function AddJournalView () {
     return (
         <>
 

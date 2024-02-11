@@ -4,7 +4,7 @@ import  Form from "../Journalform/Form";
 import  Footer  from "../PageLayout/Footer";
 import Maincontent from "../PageLayout/Maincontent";
 
-const Main = (props) => {
+function Main() {
     return (
         <>
             <Header> </Header>

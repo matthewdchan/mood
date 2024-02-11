@@ -4,7 +4,7 @@ import { useJournalContext } from '../../JournalContext';
 import { JournalProvider } from '../../JournalContext';
 
 
-const Form = () => {
+function Form() {
 
   const {setjournalBlocks} = useJournalContext();
   

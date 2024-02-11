@@ -1,6 +1,6 @@
 import React from "react";
 
-const Maincontent = (props) => {
+function Maincontent (props) {
     return (
         <main>
         </main>
