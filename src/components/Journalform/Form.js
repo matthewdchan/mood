@@ -5,6 +5,9 @@ import { JournalProvider } from '../../JournalContext';
 
 
 const Form = () => {
+
+  const { setjournalBlocks} = useJournalContext();
+  
   const [enteredTitle, setTitle] = useState('');
   const [enteredDate, setDate] = useState('');
   const [enteredText, setText] = useState('');
