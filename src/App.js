@@ -12,12 +12,25 @@ import axios from 'axios';
 
 function App() {
 
+  const [journalBlocks, setjournalBlocks] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:4000/journals')
+    .then(response => {
+      setjournalBlocks(response.data);
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  }, []) //useEffect
+
   return (
     <JournalProvider>
-      <div>
+      <div className="App">
         <Router>
           <Routes>
             <Route path="/" element={<Main />} />
+            <Route path="/maincontent" element={<Maincontent />} />
             <Route path="/add" element={<AddJournalView />} />
           </Routes>
         </Router>

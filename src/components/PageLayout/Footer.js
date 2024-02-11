@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
     return (
         <footer>
-            <p>© 2021 mood</p>
+            <p>© 2024 mood</p>
         </footer>
     );
 };
