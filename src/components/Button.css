@@ -1,0 +1,14 @@
+.button {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+    background-color: #FAEED1;
+    color:black
+    
+}
+
+.button:hover {
+    background-color: #DED0B6;
+}
