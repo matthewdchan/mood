@@ -4,7 +4,7 @@ Type npm install in the terminal to ensure all required dependencies have been i
 
 ## All members
 
-Matthew Chan
+Matthew Chan,
 Laura Lutz
 
 ### Our purpose
@@ -21,9 +21,9 @@ We were easily able to implement adding new journal entries to our database, but
 
 ### Public frameworks used:
 
-Express.js
-React.js
-Node.js
+Express.js,
+React.js,
+Node.js,
 Moment.js
 
 
