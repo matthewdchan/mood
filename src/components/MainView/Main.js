@@ -1,5 +1,8 @@
+//dependencies
 import React from "react";
 import { Link } from 'react-router-dom';
+
+// local imports
 import  Header  from "../PageLayout/Header";
 import  Form from "../Journalform/Form";
 import  Footer  from "../PageLayout/Footer";
@@ -9,7 +12,7 @@ function Main() {
     return (
         <>
             <Header> 
-                <Link to="/add-item">Add new Entry</Link>
+                <Link to='/add-item'>Add new Entry</Link>
             </Header>
             <Maincontent> </Maincontent>
             <Footer> </Footer>

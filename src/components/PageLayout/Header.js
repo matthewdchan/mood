@@ -1,13 +1,20 @@
-import React from 'react';
+// CSS
 import './Header.css';
 
-function Header() {
-    return ( 
-        <header> 
-            <h1>mood</h1>
-            <button>Add New Entry</button>
+// React
+import React from 'react';
+
+// Needed Components
+
+function Header(props){
+    return(
+        <header>
+            <h2>mood</h2>
+            <div className="button-wrapper">
+                { props.children }  
+            </div>          
         </header>
     );
-};
+}
 
 export default Header;

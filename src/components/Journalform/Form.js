@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useJournalContext } from '../../JournalContext';
 import { JournalProvider } from '../../JournalContext';
+import moment from 'moment';
 
 
 function Form() {
-
-  const {setjournalBlocks} = useJournalContext();
+  const currentDate = moment().format('MM/DD/YYYY');
+  const {setjournalblocks} = useJournalContext();
   
   const [enteredTitle, setTitle] = useState('');
-  const [enteredDate, setDate] = useState('');
+  const [enteredDate, setDate] = useState(currentDate);
   const [enteredText, setText] = useState('');
 
    const titleHandler = (event) => {
@@ -38,7 +39,7 @@ function Form() {
     .then((res) => {
         console.log(res);
         console.log(res.data);
-        setjournalBlocks((prevjournalblocks) => [...prevjournalblocks, newJournal]);
+        setjournalblocks((prevjournalblocks) => [...prevjournalblocks, newJournal]);
         //navigate('/auth-user');
     })
     .catch((err) => {
