@@ -2,15 +2,23 @@ import React from "react";
 import Card from '../Card/Card';
 import { useJournalContext } from '../../JournalContext';
 import { JournalProvider } from '../../JournalContext';
+import Journal from '../Journal';
 
 //function Maincontent () {
-function Maincontent({ journalBlocks }) {
+function Maincontent() {
+    const { journalblocks } = useJournalContext();
     return (
-        <main>
-            {journalBlocks.map((entry, index) => (
-                <Card key={index} entry={entry} />
+        <Card className="journal-wrapper">
+            {journalblocks.map((journalblock) => (
+                <Journal
+                    className="journal-block"
+                    title={journalblock.title}
+                    date={journalblock.date}
+                    text={journalblock.text}
+                    key={journalblock.id}
+                />
             ))}
-        </main>
+        </Card>
     );
 };
 export default Maincontent;
