@@ -15,7 +15,7 @@ function Maincontent() {
                     title={journalblock.title}
                     date={journalblock.date}
                     text={journalblock.text}
-                    key={journalblock.id}
+                    id={journalblock._id}
                 />
             ))}
         </Card>

@@ -9,52 +9,51 @@ import axios from 'axios';
 import { useJournalContext } from '../../JournalContext';
 import { JournalProvider } from '../../JournalContext';
 
-
-
 function EditForm(props) {
 
   const { id } = useParams();
   const navigate = useNavigate();
   const { journalblocks, setjournalblocks } = useJournalContext();
   
-  
   const [enteredTitle, setTitle] = useState('');
   const [enteredDate, setDate] = useState('');
   const [enteredText, setText] = useState('');
 
-   const titleHandler = (event) => {
+  const [wasUpdated, setWasUpdated] = useState(false); // used to ensure we don't navigate until journalblocks is updated
+
+  const titleHandler = (event) => {
     setTitle(event.target.value);
-   };
+  };
 
-   const dateHandler = (event) => {
+  const dateHandler = (event) => {
     setDate(event.target.value);
-   };
+  };
 
-   const textHandler = (event) => {
+  const textHandler = (event) => {
     setText(event.target.value);
-   };
+  };
 
-    useEffect(() => { // fetching data for journal from db based on id
-        const encodedId = encodeURIComponent(id);
-        
-        // server request to get the specific journal and populate form
-        axios
-        .get(`http://localhost:4000/journals/${encodedId}`)
-        .then((res) => {
-            console.log(res.data);
-            const data = res.data;
-            console.log(data);
+  useEffect(() => { // fetching data for journal from db based on id
+    const encodedId = encodeURIComponent(id);
+    
+    // server request to get the specific journal and populate form
+    axios
+    .get(`http://localhost:4000/journals/${encodedId}`)
+    .then((res) => {
+        console.log(res.data);
+        const data = res.data;
+        console.log(data);
 
-            setTitle(data.title);
-            setDate(data.date);
-            setText(data.text);
-        })
-        .catch((err) => {
-            console.log('Error in retrieving item');
-        });
-    }, [id]);
+        setTitle(data.title);
+        setDate(data.date);
+        setText(data.text);
+    })
+    .catch((err) => {
+        console.log('Error in retrieving item');
+    });
+  }, [id]);
 
-   const submitHandler = async (event) => {
+  const submitHandler = async (event) => {
     event.preventDefault(); 
 
     const data = { // build updated data from user
@@ -65,7 +64,7 @@ function EditForm(props) {
     // put request because journal already exists in database
     await axios
     .put(`http://localhost:4000/journals/${id}`, data)
-    .then((res) => {
+    .then(async (res) => {
         console.log(res);
         console.log(res.data);
         setjournalblocks((prevjournalblocks) => {
@@ -78,17 +77,17 @@ function EditForm(props) {
                 return journalblock;
             });
         });
+        setWasUpdated(true); // set isUpdated to true after the update to the journal entry
     })
     .catch((err) => {
         console.log('Error in updating item', err);
     });
-navigate('/'); // navigate back to main view after update
-
-/*
-setDate('');
-setText('');
-setTitle('');
-*/
+};
+useEffect(() => {
+  if (wasUpdated) {
+      navigate('/');
+  }
+}, [wasUpdated]);
 
   return (
     <div className="Form">
@@ -107,6 +106,5 @@ setTitle('');
     </div>
   );
 };
-}
 
 export default EditForm;

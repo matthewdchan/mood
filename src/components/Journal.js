@@ -3,6 +3,7 @@
 
 // React 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // Needed Components
 import Card from './Card/Card';
@@ -16,7 +17,9 @@ function Journal(props){
             <p> { props.date } </p>
             <p> { props.text } </p>
             <div className="journal-actions">
-                <Button onClick={props.onEdit}>Edit</Button>
+                <Link to={`/edit-item/${props.id}`}>
+                    <Button>Edit</Button>
+                </Link>
                  <Button onClick={props.onDelete}>Delete</Button>
             </div>
            

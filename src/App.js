@@ -33,7 +33,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Main />} />
             <Route path='/add-item' element={<AddJournalView />} />
-            <Route path='/edit-item' element={<EditJournalView />} />
+            <Route path='/edit-item/:id' element={<EditJournalView />} />
             <Route path='*' element={<ErrorPage />} />
           </Routes>
         </Router>
