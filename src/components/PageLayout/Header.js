@@ -8,7 +8,7 @@ import React from 'react';
 
 function Header(props){
     return(
-        <header>
+        <header className='header'>
             <h2>mood</h2>
             <div className="button-wrapper">
                 { props.children }  
