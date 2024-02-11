@@ -1,5 +1,7 @@
 import React from "react";
-import Card from '../components/Card';
+import Card from '../Card/Card';
+import { useJournalContext } from '../../JournalContext';
+import { JournalProvider } from '../../JournalContext';
 
 //function Maincontent () {
 function Maincontent({ journalBlocks }) {
