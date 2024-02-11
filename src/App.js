@@ -1,20 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
-import Form from './components/Journalform/Form';
-import Header from './components/PageLayout/Header'
-import { JournalProvider } from './JournalContext';
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useJournalContext, JournalProvider } from './JournalContext';
 import AddJournalView from './components/AddJournal/AddJournalView';
+import Main from './components/MainView/Main';
+
+// dependency imports
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function App() {
+
   return (
     <JournalProvider>
-      <Router>
-          <Routes> 
-            <Route path='/add-text' element={<AddJournalView/>} />
-        </Routes>
-    </Router>
+      <div>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/add" element={<AddJournalView />} />
+          </Routes>
+        </Router>
+      </div>
     </JournalProvider>
   );
 }

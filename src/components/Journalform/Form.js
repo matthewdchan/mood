@@ -6,7 +6,7 @@ import { JournalProvider } from '../../JournalContext';
 
 const Form = () => {
 
-  const { setjournalBlocks} = useJournalContext();
+  const {setjournalBlocks} = useJournalContext();
   
   const [enteredTitle, setTitle] = useState('');
   const [enteredDate, setDate] = useState('');
@@ -32,6 +32,7 @@ const Form = () => {
       date: enteredDate,
       text: enteredText
     };
+    
     await axios
     .post('http://localhost:4000/journals', newJournal)
     .then((res) => {
@@ -54,14 +55,14 @@ const Form = () => {
   return (
     <div className="Form">
       <form id="journalPart" onSubmit={submitHandler}> 
-        <label for="title"> Title: </label>
-        <input type="text"></input>
+        <label > Title: </label>
+        <input type="text" value={enteredTitle} onChange={titleHandler}></input>
         <br></br>
-        <label for="date"> Date: </label>
-        <input type="text"></input>
+        <label > Date: </label>
+        <input type="text" value={enteredDate} onChange={dateHandler}></input>
         <br></br>
-        <label for="entry"> Journal Entry: </label>
-        <input type="text"></input>
+        <label> Journal Entry: </label>
+        <input type="text" value={enteredText} onChange={textHandler}></input>
         <br></br>
         <input type="submit"></input>
       </form>
