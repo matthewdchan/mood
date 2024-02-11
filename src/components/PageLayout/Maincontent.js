@@ -1,11 +1,11 @@
 import React from "react";
-import Card from '../Card';
+import Card from '../components/Card';
 
 //function Maincontent () {
-function Maincontent({ jounralBlocks }) {
+function Maincontent({ journalBlocks }) {
     return (
         <main>
-            {jounralBlocks.map((entry, index) => (
+            {journalBlocks.map((entry, index) => (
                 <Card key={index} entry={entry} />
             ))}
         </main>

@@ -19,7 +19,7 @@ function EditForm(props) {
   
   
   const [enteredTitle, setTitle] = useState('');
-  const [enteredDate, setDate] = useState(currentDate);
+  const [enteredDate, setDate] = useState('');
   const [enteredText, setText] = useState('');
 
    const titleHandler = (event) => {
