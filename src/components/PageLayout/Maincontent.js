@@ -5,6 +5,7 @@ import axios from 'axios';
 
 import Card from '../Card/Card';
 import Journal from '../Journal';
+import './Maincontent.css';
 
 //function Maincontent () {
 function Maincontent() {
@@ -26,6 +27,7 @@ function Maincontent() {
         });
     };
     return (
+        <div className="maincontent-container">
         <Card className="journal-wrapper">
             {journalblocks.map((journalblock) => (
                 <Journal
@@ -38,6 +40,7 @@ function Maincontent() {
                 />
             ))}
         </Card>
+        </div>
     );
 };
 export default Maincontent;
