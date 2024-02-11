@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useJournalContext } from '../../JournalContext';
 import { JournalProvider } from '../../JournalContext';
 import moment from 'moment';
+import './Form.css';
 
 
 function AddForm() {
